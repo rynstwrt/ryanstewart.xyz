@@ -1,0 +1,100 @@
+@keyframes frame2 {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #EFEFEF;
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  letter-spacing: 0.25rem;
+}
+
+p {
+  letter-spacing: 0.1rem;
+}
+
+.blink {
+  opacity: 0;
+  animation: blink 0.5s ease-in infinite alternate;
+}
+
+#click-catcher {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+#container {
+  height: 50%;
+  background-color: #040404;
+  color: #EFEFEF;
+  position: relative;
+}
+#container .frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: orange;
+  opacity: 0;
+  transition: opacity 2s linear;
+}
+
+#frame1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 98;
+}
+#frame1 p {
+  padding-bottom: 2rem;
+}
+
+#frame2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#frame2 h2 {
+  font-size: 4.5rem;
+  animation: frame2 0.1s ease-in-out infinite alternate;
+}
+#frame2 p {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem 0;
+}
+
+/*# sourceMappingURL=main.css.map */
