@@ -1,61 +1,75 @@
+// user variables
+const frameTransitionSeconds = .8;
+
+// internal variables
 const clickCatcher = document.getElementById("click-catcher");
+clickCatcher.style.zIndex = "99999";
 const frames = document.getElementsByClassName("frame");
 let frameIndex = 0;
 let isPresentingFrame = false;
-const frameTransitionSeconds = 1.25;
 
-function hideFrame(frame)
-{
-    frame.style.opacity = "0";
-
-    return new Promise((resolve, reject) =>
-    {
-        setTimeout(() =>
-        {
-            frame.style.display = "none";
-            resolve();
-        }, frameTransitionSeconds * 1000);
-    });
-}
-
-function presentFrame(frame)
+// hide the previous frame and then show the next one.
+// calls a setup function for each frame at the start
+function handleFrame(index)
 {
     isPresentingFrame = true;
-    frame.style.display = "inherit";
 
-    // TODO: jumps in but fades out
-    frame.style.opacity = "1";
+    const frame = frames[index];
+    const prevFrame = frame.previousElementSibling;
 
-    return new Promise((resolve, reject) =>
+    const setupFunction = window[`before${frame.id}`];
+    if (setupFunction) setupFunction(frame);
+
+    if (prevFrame)
+    {
+        prevFrame.style.opacity = "0";
+        setTimeout(() =>
+        {
+            frame.style.opacity = "1";
+            setTimeout(() =>
+            {
+                frameHandlingDone(frame);
+            }, frameTransitionSeconds * 1000);
+        }, frameTransitionSeconds * 1000);
+    }
+    else
+    {
+        frame.style.opacity = "1";
+        setTimeout(() =>
+        {
+            frameHandlingDone(frame);
+        }, frameTransitionSeconds * 1000);
+    }
+}
+
+// function called with the frame after it is presented
+function frameHandlingDone(frame)
+{
+    // call the after-presentation function for the frame if it exists.
+    const afterFunction = window[`after${frame.id}`];
+    if (afterFunction)
     {
         setTimeout(() =>
         {
-            resolve();
-        }, frameTransitionSeconds * 1000);
-    });
+            ++frameIndex;
+            isPresentingFrame = false;
+        }, afterFunction()); // afterFunction() returns how many ms to wait
+        return;
+    }
+
+    ++frameIndex;
+    isPresentingFrame = false;
 }
 
+// when the "page" (actually click catcher div over page) is clicked
 clickCatcher.addEventListener("click", () =>
 {
     if (isPresentingFrame || frameIndex >= frames.length) return;
-
-    const prevFrame = frames[frameIndex - 1];
-    const frame = frames[frameIndex];
-
-    // hide last frame then show first frame
-    hideFrame(prevFrame).then(() =>
-    {
-        presentFrame(frame).then(() =>
-        {
-            isPresentingFrame = false;
-            ++frameIndex;
-        });
-    });
+    handleFrame(frameIndex);
 });
 
-// show first frame
-// presentFrame(frames[frameIndex]).then(() =>
-// {
-//     isPresentingFrame = false;
-//     ++frameIndex;
-// });
+// set each frame's z-index to z-index of clickCatcher - index - 1;
+for (let i = 0; i < frames.length; ++i)
+    frames[i].style.zIndex = (clickCatcher.style.zIndex - i - 1).toString();
+
+handleFrame(frameIndex);

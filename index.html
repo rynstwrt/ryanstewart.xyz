@@ -16,6 +16,8 @@
 
     <!-- Scripts -->
     <script src="AsciiArtConsole.js"></script>
+    <script src="beforeframefunctions.js"></script>
+    <script src="afterframefunctions.js"></script>
     <script defer src="index.js"></script>
 </head>
 <body>
@@ -23,14 +25,17 @@
 
     <div id="container">
 
-        <div class="frame">
-            <p class="blink">Click anywhere to begin.</p>
+        <div id="Frame1" class="frame">
+            <p id="wave">Welcome to my little interactive website. ¯\_(ツ)_/¯</p>
+            <p class="blink footer-text">Click anywhere to begin.</p>
         </div>
 
-        <div class="frame">
+        <div id="Frame2" class="frame">
             <h2>HEY!</h2>
-            <p class="blink">Click anywhere to continue...</p>
+            <p class="blink footer-text">Click anywhere to continue...</p>
         </div>
+
+        <div id="Frame3" class="frame"></div>
 
     </div>
 </body>
