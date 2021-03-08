@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <title>WebRTC Audio Visualizer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+    <div id="overlay">
+        <h2>Click anywhere to begin.</h2>
+    </div>
+
     <canvas id="visualizer-canvas"></canvas>
     <audio controls></audio>
 
     <script src="wavejs.iife.js"></script>
-    <script src="AudioVisualizer.js"></script>
+    <script src="StreamVisualizer.js"></script>
 </body>
 </html>

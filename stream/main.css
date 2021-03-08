@@ -9,4 +9,21 @@ html, body {
   background-color: #040F16;
 }
 
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #040F16;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#overlay h2 {
+  color: #D7D9CE;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
 /*# sourceMappingURL=main.css.map */
