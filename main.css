@@ -1,113 +1,78 @@
-@keyframes wave-text {
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.7);
-  }
-}
-@keyframes frame2 {
-  0% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotate(10deg);
-  }
-}
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 * {
   margin: 0;
   padding: 0;
-  border: none;
   box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
-  overflow: hidden;
+  background-color: #161414;
 }
 
 body {
-  background-color: #EFEFEF;
+  display: flex;
   font-family: "Roboto", sans-serif;
+  color: white;
+  text-align: center;
 }
-
-h2 {
-  letter-spacing: 0.25rem;
+body > div {
+  width: 50%;
+  height: 100%;
 }
 
 p {
-  letter-spacing: 0.1rem;
-}
-
-.blink {
-  opacity: 0;
-  animation: blink 0.5s ease-in infinite alternate;
-}
-
-.footer-text {
-  position: absolute;
-  bottom: 0;
+  width: 100%;
   padding: 1rem 0;
+  margin-bottom: 3rem;
+  font-size: 0.8rem;
 }
 
-#click-catcher {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-
-#container {
-  height: 50%;
-  background-color: #040404;
-  color: #EFEFEF;
-  position: relative;
-}
-#container .frame {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.7s ease-in-out;
-}
-
-#Frame1 {
+#left {
+  background-color: #C7EF00;
+  color: #161414;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#left-inner {
+  display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-}
-#Frame1 #wave {
   max-width: 80%;
-  font-size: 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  white-space: pre-wrap;
-  justify-content: center;
-  align-items: center;
 }
-#Frame1 #wave p {
-  transform: scale(0.7);
+#left-inner #album-art-container {
+  padding: 0.6rem;
+  width: 170px;
+  height: 170px;
+  background-color: white;
+}
+#left-inner #album-art-container #album-art {
+  width: 100%;
+  height: 100%;
 }
 
-#Frame2 {
+#right {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  overflow: hidden;
 }
-#Frame2 h2 {
-  font-size: 4.5rem;
-  animation: frame2 0.1s ease-in-out infinite alternate;
+#right canvas {
+  opacity: 0;
+}
+
+#audio-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#audio-controls input[type=range] {
+  width: 60%;
 }
 
 /*# sourceMappingURL=main.css.map */

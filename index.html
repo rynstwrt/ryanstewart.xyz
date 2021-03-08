@@ -4,7 +4,6 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="A development playground for Ryan Stewart.">
 
     <!-- Page Title -->
     <title>www.ryanstewart.xyz</title>
@@ -14,29 +13,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css">
 
-    <!-- Scripts -->
-    <script src="AsciiArtConsole.js"></script>
-    <script src="beforeframefunctions.js"></script>
-    <script src="afterframefunctions.js"></script>
-    <script defer src="index.js"></script>
+    <!-- Scripts Pt.1 -->
+    <script src="https://kit.fontawesome.com/d1ed772a88.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="click-catcher"></div>
+    <!-- Left half -->
+    <div id="left">
+        <div id="left-inner">
+            <!-- Album art section -->
+            <div id="album-art-container">
+                <img id="album-art" alt="Album Art">
+            </div>
 
-    <div id="container">
+            <!-- Track artist and title section -->
+            <p id="artist-and-title"></p>
 
-        <div id="Frame1" class="frame">
-            <p id="wave">Welcome to my little interactive website. ¯\_(ツ)_/¯</p>
-            <p class="blink footer-text">Click anywhere to begin.</p>
+            <!-- Controls for audio -->
+            <div id="audio-controls">
+                <i id="play-pause-button" class="fas fa-play"></i>
+                <input id="volume-slider" type="range" value="1" max="1" step="any">
+            </div>
         </div>
-
-        <div id="Frame2" class="frame">
-            <h2>HEY!</h2>
-            <p class="blink footer-text">Click anywhere to continue...</p>
-        </div>
-
-        <div id="Frame3" class="frame"></div>
-
     </div>
+
+    <!-- Right half -->
+    <div id="right">
+        <canvas id="visualizer-canvas"></canvas>
+    </div>
+
+    <!-- Audio element -->
+    <audio id="visualizer-audio"></audio>
+
+    <!-- Scripts -->
+    <script src="Assets/Libraries/jquery-3.6.0.min.js"></script>
+    <script src="Assets/Libraries/rangeslider.min.js"></script>
+    <script src="Assets/Libraries/wavejs.iife.js"></script>
+    <script src="LoadTrackData.js"></script>
+    <script src="ElementVisualizer.js"></script>
 </body>
 </html>
