@@ -24,5 +24,14 @@ function beforeFrame1(frame)
 function beforeFrame3(frame)
 {
     // TODO: terminal style dialog
-    const lines = [""];
+    const lines = ["You have just woken up."];
+
+    for (let i = 0; i < lines.length; ++i)
+    {
+        const letters = lines[i].split("");
+        const letter = document.createElement("p");
+
+        letter.textContent = letters[i];
+        frame.appendChild(letter);
+    }
 }
