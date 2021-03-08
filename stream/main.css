@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow: hidden;
+  background-color: #040F16;
+}
+
+/*# sourceMappingURL=main.css.map */
