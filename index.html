@@ -4,6 +4,7 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="An audio visualizer created by Ryan Stewart">
 
     <!-- Page Title -->
     <title>www.ryanstewart.xyz</title>
@@ -13,8 +14,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css">
 
-    <!-- Scripts Pt.1 -->
+    <!-- Scripts Part 1 -->
     <script src="https://kit.fontawesome.com/d1ed772a88.js" crossorigin="anonymous"></script>
+    <script src="AsciiArtConsole.js"></script>
+    <script>
+        let files = ["apx", "normandveilleux", "unknownartist1"];
+        files = files.map(name => `Assets/Ascii Art/${name}.txt`);
+        const asciiArtConsole = new AsciiArtConsole(files);
+        asciiArtConsole.printRandom();
+    </script>
 </head>
 <body>
     <!-- Left half -->
@@ -44,7 +52,7 @@
     <!-- Audio element -->
     <audio id="visualizer-audio"></audio>
 
-    <!-- Scripts -->
+    <!-- Scripts part 2 -->
     <script src="Assets/Libraries/jquery-3.6.0.min.js"></script>
     <script src="Assets/Libraries/rangeslider.min.js"></script>
     <script src="Assets/Libraries/wavejs.iife.js"></script>
