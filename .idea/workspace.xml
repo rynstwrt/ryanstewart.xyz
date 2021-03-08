@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac59062-c9b5-4a06-8b4f-f756856d771e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myassets/ascii art/apx.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myassets/ascii art/normandveilleux.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myassets/ascii art/unknownartist1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myassets/audio/MamaChula.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myassets/images/MandaMoor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myassets/libraries/jquery-3.6.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myassets/libraries/rangeslider.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myassets/libraries/wavejs.iife.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoadTrackData.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoadTrackData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Ascii Art/apx.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Ascii Art/normandveilleux.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Ascii Art/unknownartist1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Audio/MamaChula.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/MandaMoor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Libraries/jquery-3.6.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Libraries/rangeslider.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Libraries/wavejs.iife.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +23,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ryans\Documents\GitHub\ryanstewart.xyz" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -50,7 +39,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615232132137</updated>
-      <workItem from="1615232135641" duration="998000" />
+      <workItem from="1615232135641" duration="1335000" />
     </task>
     <servers />
   </component>
