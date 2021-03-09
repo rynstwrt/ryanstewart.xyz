@@ -5,10 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stream/StreamVisualizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/stream/StreamVisualizer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stream/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stream/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/wavejs.iife.js" beforeDir="false" afterPath="$PROJECT_DIR$/stream/Foobar404WaveJSRynstwrtFix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +58,7 @@
       <workItem from="1615234900759" duration="55000" />
       <workItem from="1615238764396" duration="291000" />
       <workItem from="1615299811127" duration="15722000" />
+      <workItem from="1615325573742" duration="464000" />
     </task>
     <servers />
   </component>

@@ -7,8 +7,10 @@ const designs = ["web", "bars", "bars blocks", "big bars", "cubes", "dualbars", 
 
 // handle canvas size and resizing.
 const canvas = document.getElementById("visualizer-canvas");
+const canvasTransitionSeconds = .5;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+canvas.style.transition = `opacity ${canvasTransitionSeconds}s ease-in-out`;
 window.addEventListener("resize", () =>
 {
     canvas.width = window.innerWidth;
@@ -32,7 +34,8 @@ function onMicAccess(micStream)
 
     wave.fromStream(stream, canvas.id, design);
     wave.playStream();
-    overlay.style.display = "none";
+    overlay.style.transition = `opacity ${canvasTransitionSeconds}s ease-in-out`;
+    overlay.style.opacity = "0";
 }
 
 
@@ -106,7 +109,13 @@ document.addEventListener("keydown", e =>
             colors: colorArrays[colorIndex]
         }
 
-        wave.fromStream(stream, canvas.id, design);
+        canvas.style.opacity = "0";
+
+        setTimeout(() =>
+        {
+            wave.fromStream(stream, canvas.id, design);
+            canvas.style.opacity = "1";
+        }, canvasTransitionSeconds * 1000);
         return;
     }
 
@@ -120,7 +129,13 @@ document.addEventListener("keydown", e =>
             colors: colorArrays[colorIndex]
         }
 
-        wave.fromStream(stream, canvas.id, design);
+        canvas.style.opacity = "0";
+
+        setTimeout(() =>
+        {
+            wave.fromStream(stream, canvas.id, design);
+            canvas.style.opacity = "1";
+        }, canvasTransitionSeconds * 1000);
         return;
     }
 
