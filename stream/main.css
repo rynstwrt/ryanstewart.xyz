@@ -5,8 +5,27 @@
 }
 
 html, body {
+  height: 100%;
   overflow: hidden;
   background-color: #040F16;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  color: #D7D9CE;
+}
+
+.footer-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  margin: 0.5rem 0;
+}
+.footer-line code {
+  white-space: pre;
+  padding: 0.1rem 0.2rem;
+  background-color: rgba(12, 116, 137, 0.1);
+  text-align: center;
 }
 
 #overlay {
@@ -14,16 +33,25 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: #040F16;
-  z-index: 2;
+  z-index: 3;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 0 2rem;
 }
 #overlay h2 {
-  color: #D7D9CE;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
 }
 
 /*# sourceMappingURL=main.css.map */

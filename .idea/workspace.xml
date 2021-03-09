@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0ac59062-c9b5-4a06-8b4f-f756856d771e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream/StreamVisualizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/stream/StreamVisualizer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stream/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream/wavejs.iife.js" beforeDir="false" afterPath="$PROJECT_DIR$/stream/Foobar404WaveJSRynstwrtFix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +17,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1pUKG7kF3jJM8SOczNfhcCi5aSC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -24,6 +37,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebRTC-Audio-Visualizer" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -42,7 +61,7 @@
       <workItem from="1615232135641" duration="1373000" />
       <workItem from="1615234900759" duration="55000" />
       <workItem from="1615238764396" duration="291000" />
-      <workItem from="1615299811127" duration="758000" />
+      <workItem from="1615299811127" duration="15722000" />
     </task>
     <servers />
   </component>

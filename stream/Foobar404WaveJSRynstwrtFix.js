@@ -83,7 +83,7 @@ var Wave = (function () {
                 requestAnimationFrame(renderFrame);
                 frameCount++;
 
-                //check if this element is the last to be called 
+                //check if this element is the last to be called
                 if (!(currentCount < this.activeElements[element_id].count)) {
                     analyser.getByteFrequencyData(data);
                     this.activeElements[element_id].data = data;
@@ -110,7 +110,7 @@ var Wave = (function () {
         if (this.activated || options['skipUserEventsWatcher']) {
             run.call(waveContext);
         } else {
-            //wait for a valid user gesture 
+            //wait for a valid user gesture
             document.body.addEventListener("touchstart", create, { once: true });
             document.body.addEventListener("touchmove", create, { once: true });
             document.body.addEventListener("touchend", create, { once: true });
@@ -225,7 +225,8 @@ var Wave = (function () {
 
             source = audioCtx.createMediaStreamSource(stream);
             source.connect(analyser);
-            source.connect(audioCtx.destination); //playback audio
+            // uncomment to enable audio playback through the browser
+            // source.connect(audioCtx.destination);
 
             this.sources[stream.toString()] = {
                 "audioCtx": audioCtx,
@@ -245,18 +246,18 @@ var Wave = (function () {
 
         let self = this;
 
-        function renderFrame() {
+        function renderFrame()
+        {
             self.current_stream.animation = requestAnimationFrame(self.current_stream.loop);
             self.sources[stream.toString()].animation = self.current_stream.animation;
             analyser.getByteFrequencyData(self.current_stream.data);
-
-            self.visualize(self.current_stream.data, self.current_stream.id, self.current_stream.options);
+            self.visualize(self.current_stream.data, self.current_stream.id, self.current_stream.options, 1);
         }
 
         this.current_stream.loop = renderFrame;
         renderFrame();
-
     }
+
 
     function stopStream() {
         cancelAnimationFrame(this.current_stream.animation);
@@ -751,7 +752,7 @@ var Wave = (function () {
         points.start.forEach((start, i) => {
             let squareCount = Math.ceil(data[i] / squareSize);
 
-            //find color stops from total possible squares in bar 
+            //find color stops from total possible squares in bar
             let totalSquares = (h - (spacing * (h / squareSize))) / squareSize;
             let colorStop = Math.ceil(totalSquares / colors.length);
 
@@ -2096,7 +2097,6 @@ var Wave = (function () {
         if (!options.stroke) options.stroke = 1;
         if (!options.colors) options.colors = ["#d92027", "#ff9234", "#ffcd3c", "#35d0ba"];
 
-
         let canvas = document.getElementById(canvasId);
 
         if (!canvas) return;
@@ -2168,6 +2168,7 @@ var Wave = (function () {
 
         options.type.forEach(type => {
             //abide by the frame rate
+
             if (frame % frameRateMap[type] === 0) {
                 //clear canvas
                 ctx.clearRect(0, 0, w, h);
@@ -2209,7 +2210,7 @@ var Wave = (function () {
             }
 
             if (type === "shrink") {
-                //resize array by % of current array 
+                //resize array by % of current array
                 if (extra < 1) {
                     extra = data.length * extra;
                 }
