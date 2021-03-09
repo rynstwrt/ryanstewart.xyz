@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0ac59062-c9b5-4a06-8b4f-f756856d771e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/AudioVisualizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/stream/StreamVisualizer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stream/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +42,7 @@
       <workItem from="1615232135641" duration="1373000" />
       <workItem from="1615234900759" duration="55000" />
       <workItem from="1615238764396" duration="291000" />
+      <workItem from="1615299811127" duration="758000" />
     </task>
     <servers />
   </component>
