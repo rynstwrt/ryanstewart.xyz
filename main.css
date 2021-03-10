@@ -20,15 +20,11 @@ body > div:not(#overlay) {
   height: 100%;
 }
 
-p {
-  width: 100%;
-  padding: 1rem 0;
-  margin-bottom: 3rem;
-  font-size: 0.8rem;
-}
-
 #overlay {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   background-color: #161414;
@@ -37,7 +33,6 @@ p {
 }
 #overlay #overlay-inner {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,14 +47,26 @@ p {
 #overlay h1:last-child {
   padding-bottom: 0.75rem;
 }
-#overlay div:last-child {
+#overlay #click-anywhere {
   width: 100%;
+  margin-bottom: 4rem;
 }
-#overlay div:last-child p {
+#overlay #click-anywhere p {
+  width: 100%;
   color: white;
   padding: 0.75rem 2.2rem;
-  font-size: 1rem;
   text-align: right;
+}
+#overlay #tip {
+  opacity: 0.6;
+  text-align: center;
+}
+#overlay #tip code {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  background-color: rgba(51, 51, 51, 0.6);
+  padding: 0 0.4rem;
+  margin: 0 0.2rem;
 }
 
 #left {
@@ -78,15 +85,23 @@ p {
   align-items: center;
   max-width: 80%;
 }
-#left-inner #album-art-container {
+
+#album-art-container {
   padding: 0.6rem;
   width: 170px;
   height: 170px;
   background-color: white;
 }
-#left-inner #album-art-container #album-art {
+#album-art-container #album-art {
   width: 100%;
   height: 100%;
+}
+
+#artist-and-title {
+  font-size: 0.8rem;
+  width: 100%;
+  padding: 1rem 0;
+  margin-bottom: 3rem;
 }
 
 #right {
@@ -98,12 +113,8 @@ p {
 }
 
 @media only screen and (min-width: 768px) {
-  p {
+  #artist-and-title {
     font-size: 1rem;
-  }
-
-  i {
-    margin-right: 2rem;
   }
 
   #album-art-container {
@@ -113,6 +124,8 @@ p {
 
   #overlay-inner {
     width: 80% !important;
+    border: 5px solid #C7EF00;
+    padding: 50px 25px;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -121,16 +134,18 @@ p {
   }
 
   #overlay-inner {
-    width: 50% !important;
+    width: 70% !important;
+    padding: 50px 100px;
   }
 }
 @media only screen and (min-width: 1400px) {
-  p {
+  #artist-and-title {
     font-size: 1.25rem;
   }
 
   #overlay-inner {
-    width: 30% !important;
+    width: 45% !important;
+    padding: 50px 150px;
   }
 }
 

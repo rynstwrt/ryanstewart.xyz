@@ -1,7 +1,7 @@
 // SCSS variables
 $primary-color: #C7EF00;
 $accent-color-dark: #161414;
-$accent-color-dark-2: #333;
+$accent-color-dark-2: #333333;
 $accent-color-light: white;
 
 
@@ -33,38 +33,32 @@ body
     }
 }
 
-p
-{
-    width: 100%;
-    padding: 1rem 0;
-    margin-bottom: 3rem;
-    font-size: .8rem;
-}
-
 
 // Startup screen
 #overlay
 {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     background-color: $accent-color-dark;
     text-align: left;
     z-index: 999;
 
-    $text-padding-x: 2.2rem;
-    $text-padding-y: .75rem;
-
     #overlay-inner
     {
         width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
     }
+
+    $text-padding-x: 2.2rem;
+    $text-padding-y: .75rem;
 
     h1
     {
@@ -78,16 +72,32 @@ p
         }
     }
 
-    div:last-child
+    #click-anywhere
     {
         width: 100%;
+        margin-bottom: 4rem;
 
         p
         {
+            width: 100%;
             color: $accent-color-light;
             padding: $text-padding-y $text-padding-x;
-            font-size: 1rem;
             text-align: right;
+        }
+    }
+
+    #tip
+    {
+        opacity: .6;
+        text-align: center;
+
+        code
+        {
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            background-color: rgba($accent-color-dark-2, .6);
+            padding: 0 .4rem;
+            margin: 0 .2rem;
         }
     }
 }
@@ -113,21 +123,32 @@ p
     justify-content: center;
     align-items: center;
     max-width: 80%;
+}
 
-    #album-art-container
+
+// album art and artist/title
+#album-art-container
+{
+    padding: .6rem;
+    $size: 170px;
+    width: $size;
+    height: $size;
+    background-color: $accent-color-light;
+
+    #album-art
     {
-        padding: .6rem;
-        $size: 170px;
-        width: $size;
-        height: $size;
-        background-color: $accent-color-light;
-
-        #album-art
-        {
-            width: 100%;
-            height: 100%;
-        }
+        width: 100%;
+        height: 100%;
     }
+}
+
+// Paragraph in left-inner
+#artist-and-title
+{
+    font-size: .8rem;
+    width: 100%;
+    padding: 1rem 0;
+    margin-bottom: 3rem;
 }
 
 
@@ -145,14 +166,9 @@ p
 // breakpoint for tablets
 @media only screen and (min-width: 768px)
 {
-    p
+    #artist-and-title
     {
         font-size: 1rem;
-    }
-
-    i
-    {
-        margin-right: 2rem;
     }
 
     #album-art-container
@@ -165,6 +181,8 @@ p
     #overlay-inner
     {
         width: 80% !important;
+        border: 5px solid $primary-color;
+        padding: 50px 25px;
     }
 }
 
@@ -179,7 +197,8 @@ p
 
     #overlay-inner
     {
-        width: 50% !important;
+        width: 70% !important;
+        padding: 50px 100px;
     }
 }
 
@@ -187,13 +206,14 @@ p
 // breakpoint for larger devices
 @media only screen and (min-width: 1400px)
 {
-    p
+    #artist-and-title
     {
         font-size: 1.25rem;
     }
 
     #overlay-inner
     {
-        width: 30% !important;
+        width: 45% !important;
+        padding: 50px 150px;
     }
 }
