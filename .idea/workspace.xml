@@ -2,13 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac59062-c9b5-4a06-8b4f-f756856d771e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stream/EventHandling.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/StreamVisualizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/stream/StreamVisualizer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ElementVisualizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/ElementVisualizer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoadTrackData.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoadTrackData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/main.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myassets/ascii art/apx.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ascii art/apx.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myassets/ascii art/normandveilleux.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ascii art/normandveilleux.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myassets/ascii art/unknownartist1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ascii art/unknownartist1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myassets/audio/MamaChula.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audio/MamaChula.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myassets/images/MandaMoor.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/MandaMoor.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myassets/libraries/jquery-3.6.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myassets/libraries/rangeslider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myassets/libraries/wavejs.iife.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream/Foobar404WaveJSRynstwrtFix.js" beforeDir="false" afterPath="$PROJECT_DIR$/Foobar404WaveJSRynstwrtFix.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stream/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stream/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/stream/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +68,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ryans\Documents\GitHub\ryanstewart.xyz" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ryans\Documents\GitHub\ryanstewart.xyz" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -72,7 +85,7 @@
       <workItem from="1615238764396" duration="291000" />
       <workItem from="1615299811127" duration="15722000" />
       <workItem from="1615325573742" duration="464000" />
-      <workItem from="1615390008263" duration="6959000" />
+      <workItem from="1615390008263" duration="9628000" />
     </task>
     <servers />
   </component>

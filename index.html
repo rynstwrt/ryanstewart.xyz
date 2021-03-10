@@ -14,17 +14,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css">
 
-    <!-- Scripts Part 1 -->
-    <script src="https://kit.fontawesome.com/d1ed772a88.js" crossorigin="anonymous"></script>
+    <!-- Random ascii art in console -->
     <script src="AsciiArtConsole.js"></script>
     <script>
         let files = ["apx", "normandveilleux", "unknownartist1"];
-        files = files.map(name => `myassets/ascii art/${name}.txt`);
+        files = files.map(name => `ascii art/${name}.txt`);
         const asciiArtConsole = new AsciiArtConsole(files);
         asciiArtConsole.printRandom();
     </script>
 </head>
 <body>
+    <!-- Startup page -->
+    <div id="overlay">
+        <div id="overlay-inner">
+            <div>
+                <h1>Hey,</h1>
+                <h1>welcome to my website!</h1>
+            </div>
+            <div>
+                <p>(click anywhere to begin)</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Left half -->
     <div id="left">
         <div id="left-inner">
@@ -35,12 +47,6 @@
 
             <!-- Track artist and title section -->
             <p id="artist-and-title"></p>
-
-            <!-- Controls for audio -->
-            <div id="audio-controls">
-                <i id="play-pause-button" class="fas fa-play"></i>
-                <input id="volume-slider" type="range" value="1" max="1" step="any">
-            </div>
         </div>
     </div>
 
@@ -53,9 +59,7 @@
     <audio id="visualizer-audio"></audio>
 
     <!-- Scripts part 2 -->
-    <script src="myassets/libraries/jquery-3.6.0.min.js"></script>
-    <script src="myassets/libraries/rangeslider.min.js"></script>
-    <script src="myassets/libraries/wavejs.iife.js"></script>
+    <script src="Foobar404WaveJSRynstwrtFix.js"></script>
     <script src="LoadTrackData.js"></script>
     <script src="ElementVisualizer.js"></script>
 </body>

@@ -26,7 +26,7 @@ body
     color: $accent-color-light;
     text-align: center;
 
-    & > div
+    & > div:not(#overlay)
     {
         width: 50%;
         height: 100%;
@@ -39,6 +39,57 @@ p
     padding: 1rem 0;
     margin-bottom: 3rem;
     font-size: .8rem;
+}
+
+
+// Startup screen
+#overlay
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $accent-color-dark;
+    text-align: left;
+    z-index: 999;
+
+    $text-padding-x: 2.2rem;
+    $text-padding-y: .75rem;
+
+    #overlay-inner
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    h1
+    {
+        font-size: 3rem;
+        padding: 0 $text-padding-x;
+        color: $primary-color;
+
+        &:last-child
+        {
+            padding-bottom: $text-padding-y;
+        }
+    }
+
+    div:last-child
+    {
+        width: 100%;
+
+        p
+        {
+            color: $accent-color-light;
+            padding: $text-padding-y $text-padding-x;
+            font-size: 1rem;
+            text-align: right;
+        }
+    }
 }
 
 
@@ -88,26 +139,6 @@ p
     justify-content: center;
     align-items: flex-start;
     overflow: hidden;
-
-    canvas
-    {
-        opacity: 0;
-    }
-}
-
-
-// Audio and visualizer controls
-#audio-controls
-{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-
-    input[type="range"]
-    {
-        width: 60%;
-    }
 }
 
 
@@ -124,16 +155,16 @@ p
         margin-right: 2rem;
     }
 
-    input[type="range"]
-    {
-        flex: 1;
-    }
-
     #album-art-container
     {
         $size: 250px !important;
         width: $size;
         height: $size;
+    }
+
+    #overlay-inner
+    {
+        width: 80% !important;
     }
 }
 
@@ -145,6 +176,11 @@ p
     {
         width: 60%;
     }
+
+    #overlay-inner
+    {
+        width: 50% !important;
+    }
 }
 
 
@@ -154,5 +190,10 @@ p
     p
     {
         font-size: 1.25rem;
+    }
+
+    #overlay-inner
+    {
+        width: 30% !important;
     }
 }

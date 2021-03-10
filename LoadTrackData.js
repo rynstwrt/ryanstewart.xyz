@@ -4,10 +4,10 @@ const textElement = document.getElementById("artist-and-title");
 
 const songs = [
     {
-        art: "myassets/images/MandaMoor.jpg",
+        art: "images/MandaMoor.jpg",
         title: "Mama Chula (Manda Moor Edit)",
         artist: "Sirus Hood, Manda Moor",
-        src: "myassets/audio/MamaChula.mp3"
+        src: "audio/MamaChula.mp3"
     }
 ];
 
