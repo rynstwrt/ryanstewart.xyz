@@ -1,21 +1,7 @@
 // user variables
-let colorIndex = 0;
-const colorArrays = getColorPermutations(["#E03616", "#D7D9CE", "#0C7489", "#119DA4"]);
-let designIndex = 8;
+let designIndex = 4;
 const designs = ["web", "bars", "bars blocks", "big bars", "cubes", "dualbars", "dualbars blocks", "fireworks", "flower", "flower blocks", "orbs", "ring", "rings", "round wave", "shine", "shine rings", "shockwave", "star", "static", "stitches", "wave"];
-
-
-// handle canvas size and resizing.
-const canvas = document.getElementById("visualizer-canvas");
-const canvasTransitionSeconds = .5;
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-canvas.style.transition = `opacity ${canvasTransitionSeconds}s ease-in-out`;
-window.addEventListener("resize", () =>
-{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
+let isTransitioning = false;
 
 
 // on microphone access
@@ -25,17 +11,40 @@ const wave = new Wave();
 let stream;
 function onMicAccess(micStream)
 {
+    // set stream and visualize audio
     stream = micStream;
-
-    const design = {
-        type: designs[designIndex],
-        colors: colorArrays[colorIndex]
-    }
-
-    wave.fromStream(stream, canvas.id, design);
+    wave.fromStream(stream, canvas.id, { type: designs[designIndex], colors: colors });
     wave.playStream();
+
+
+    // hide the overlay to reveal the visualizer
     overlay.style.transition = `opacity ${canvasTransitionSeconds}s ease-in-out`;
     overlay.style.opacity = "0";
+
+    // if using touch device, update the controls in the footer
+    if (isTouchDevice())
+    {
+        document.getElementById("code-left").textContent = "Swipe left";
+        document.getElementById("code-right").textContent = "Swipe right";
+        document.getElementById("code-enter").textContent = "Tap";
+        document.getElementById("code-up").textContent = "Swipe up";
+        document.getElementById("code-down").textContent = "Swipe down";
+
+        // let EventHandling.js know when can listen for swipe/tap events.
+        setTimeout(() =>
+        {
+            readyToHandleTouchEvents = true;
+            overlay.style.display = "none";
+        }, canvasTransitionSeconds * 1000);
+    }
+    else
+    {
+        setTimeout(() =>
+        {
+            readyToHandleKeyEvents = true;
+            overlay.style.display = "none";
+        }, canvasTransitionSeconds * 1000);
+    }
 }
 
 
@@ -48,108 +57,80 @@ function onMicDeny()
 }
 
 
-// wait for user interaction, then request microphone access.
-overlay.addEventListener("click", () =>
+// toggle footer on enter press
+const footer = document.getElementById("footer");
+function toggleFooter()
 {
-    navigator.mediaDevices.getUserMedia({ audio: true }).then(onMicAccess).catch(onMicDeny);
-});
-
-
-// get permutation of colors from a given color array
-function getColorPermutations(currentColors)
-{
-    const result = [];
-    if (currentColors.length === 0 || currentColors.length === 1) return currentColors;
-
-    for (let i = 0; i < currentColors.length; ++i)
-    {
-        const currentColor = currentColors[i];
-        const remainingColors = currentColors.slice(0, i).concat(currentColors.slice(i + 1));
-
-        const remainingColorsPermuted = getColorPermutations(remainingColors);
-
-        for (let j = 0; j < remainingColorsPermuted.length; ++j)
-        {
-            const permutedArray = [currentColor].concat(remainingColorsPermuted[j]);
-            result.push(permutedArray);
-        }
-    }
-
-    return result;
+    footer.style.display = (footer.style.display !== "none") ? "none" : "inherit";
 }
 
 
-const footer = document.getElementById("footer");
-document.addEventListener("keydown", e =>
+// change the visualizer
+function cycleVisualizer(isIncreasing)
 {
-    // cancel the keydown event
-    e.preventDefault();
+    if (isTransitioning) return;
+    isTransitioning = true;
 
-    // if the event is fired within a composition session (multiple keys)
-    if (e.isComposing) return;
-
-    // some browsers don't have .code, so use keyCode as fallback.
-    const code = e.code || e.keyCode;
-
-    // hide or show footer on enter key
-    if (code === "Enter" || code === 13)
-    {
-        const currentDisplay = footer.style.display;
-        footer.style.display = (currentDisplay !== "none") ? "none" : "inherit";
-        return;
-    }
-
-    // change visualizer on left arrow key
-    if (code === "ArrowLeft" || code === 74)
-    {
+    if (isIncreasing)
+        designIndex = (designIndex === designs.length - 1) ? 0 : designIndex + 1;
+    else
         designIndex = (designIndex === 0) ? designs.length - 1 : designIndex - 1;
 
-        const design = {
-            type: designs[designIndex],
-            colors: colorArrays[colorIndex]
-        }
+    canvas.style.opacity = "0";
 
-        canvas.style.opacity = "0";
-
+    setTimeout(() =>
+    {
+        wave.fromStream(stream, canvas.id, { type: designs[designIndex], colors: colors });
+        canvas.style.opacity = "1";
         setTimeout(() =>
         {
-            wave.fromStream(stream, canvas.id, design);
-            canvas.style.opacity = "1";
+            isTransitioning = false;
         }, canvasTransitionSeconds * 1000);
-        return;
-    }
+    }, canvasTransitionSeconds * 1000);
+}
 
-    // change visualizer on right arrow key
-    if (code === "ArrowRight" || code === 39)
+
+// check if the device is a touch device
+function isTouchDevice()
+{
+    const hasEvent = "ontouchstart" in window;
+    const hasTouchPoints = navigator.maxTouchPoints > 0;
+    const msHasTouchPoints = navigator.msMaxTouchPoints > 0;
+    return hasEvent || hasTouchPoints || msHasTouchPoints;
+}
+
+
+// "disable" the given div. For the color palette/picker sections.
+function enableDisableSection(elem, enabling)
+{
+    enabling ? elem.classList.remove("disabled-section") : elem.classList.add("disabled-section");
+}
+
+
+// change the color order
+function cycleColors(increasing)
+{
+    const newColors = [];
+
+    if (increasing)
     {
-        designIndex = (designIndex === designs.length - 1) ? 0 : designIndex + 1;
-
-        const design = {
-            type: designs[designIndex],
-            colors: colorArrays[colorIndex]
-        }
-
-        canvas.style.opacity = "0";
-
-        setTimeout(() =>
+        // move each color up an index
+        for (let i = 0; i < colors.length; ++i)
         {
-            wave.fromStream(stream, canvas.id, design);
-            canvas.style.opacity = "1";
-        }, canvasTransitionSeconds * 1000);
-        return;
-    }
-
-    // change the order of the color palette (increase index by 1)
-    if (code === "Space" || code === 32)
-    {
-        if (colorIndex === colorArrays.length - 1) colorIndex = -1;
-        ++colorIndex;
-
-        const design = {
-            type: designs[designIndex],
-            colors: colorArrays[colorIndex]
+            const currentIndex = (i + 1) % colors.length;
+            newColors[currentIndex] = colors[i];
         }
-
-        wave.fromStream(stream, canvas.id, design);
     }
-});
+    else
+    {
+        // move each color down an index
+        for (let i = colors.length - 1; i >= 0; --i)
+        {
+            const currentIndex = i - 1 < 0 ? colors.length - 1 : i - 1;
+            newColors[currentIndex] = colors[i];
+        }
+    }
+
+    colors = newColors;
+    wave.fromStream(stream, canvas.id, { type: designs[designIndex], colors: colors });
+}

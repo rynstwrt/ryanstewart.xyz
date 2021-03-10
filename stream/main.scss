@@ -22,13 +22,18 @@ html, body
     color: $color3;
 }
 
+select, input[type="color"]
+{
+    margin-left: .25rem;
+}
+
 .footer-line
 {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     white-space: pre-wrap;
-    margin: .5rem 0;
+    margin: .75rem 0;
 
     code
     {
@@ -37,6 +42,12 @@ html, body
         background-color: rgba($color4, .1);
         text-align: center;
     }
+}
+
+.disabled-section
+{
+    transform: scale(.8);
+    opacity: .5;
 }
 
 #overlay
@@ -55,15 +66,36 @@ html, body
 
     h2
     {
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
     }
+
+    & > p
+    {
+        margin: .25rem 0;
+        text-decoration: underline;
+    }
+
+    div
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: .5rem 0;
+        transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+    }
+}
+
+#start-button
+{
+    margin-top: 1rem;
+    padding: .1rem .2rem;
 }
 
 #footer
 {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    top: 0;
+    right: 0;
     z-index: 2;
     padding: .5rem .75rem;
     font-size: .85rem;

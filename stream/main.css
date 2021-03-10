@@ -14,18 +14,27 @@ html, body {
   color: #D7D9CE;
 }
 
+select, input[type=color] {
+  margin-left: 0.25rem;
+}
+
 .footer-line {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   white-space: pre-wrap;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 .footer-line code {
   white-space: pre;
   padding: 0.1rem 0.2rem;
   background-color: rgba(12, 116, 137, 0.1);
   text-align: center;
+}
+
+.disabled-section {
+  transform: scale(0.8);
+  opacity: 0.5;
 }
 
 #overlay {
@@ -42,13 +51,29 @@ html, body {
   padding: 0 2rem;
 }
 #overlay h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+#overlay > p {
+  margin: 0.25rem 0;
+  text-decoration: underline;
+}
+#overlay div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+#start-button {
+  margin-top: 1rem;
+  padding: 0.1rem 0.2rem;
 }
 
 #footer {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
   z-index: 2;
   padding: 0.5rem 0.75rem;
   font-size: 0.85rem;

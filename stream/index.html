@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WebRTC Audio Visualizer</title>
+    <title>Audio Stream Visualizer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -10,24 +10,46 @@
 </head>
 <body>
     <div id="overlay">
-        <h2>Click the page, then grant microphone access to begin.</h2>
+        <h2>Submit your options, then grant microphone access to begin.</h2>
+
+        <div id="color-section">
+            <p>Choose the color palette:</p>
+            <select id="palettes">
+                <option>Ice Pop</option>
+                <option>Birch Gunmetal</option>
+                <option selected>VU Meter</option>
+                <option>Beige Matte</option>
+            </select>
+        </div>
+
+        <p>OR</p>
+
+        <div id="custom-color-section">
+            <p>Choose your own single color!</p>
+            <input id="custom-color-input" type="color", value="#80FFBD">
+        </div>
+
+        <input id="start-button" type="button" value="Submit">
+
     </div>
 
     <div id="footer">
         <div class="footer-line">
-            <code>Left arrow</code>
+            <code id="code-left">Left arrow</code>
             <p> and </p>
-            <code>Right arrow</code>
+            <code id="code-right">Right arrow</code>
             <p> to change the visualizer</p>
         </div>
 
         <div class="footer-line">
-            <code>Enter</code>
+            <code id="code-enter">Enter</code>
             <p> to show or hide this text</p>
         </div>
 
         <div class="footer-line">
-            <code>Space</code>
+            <code id="code-up">Up arrow</code>
+            <p> and </p>
+            <code id="code-down">Down arrow</code>
             <p> to change the color order</p>
         </div>
     </div>
@@ -36,5 +58,6 @@
 
     <script src="Foobar404WaveJSRynstwrtFix.js"></script>
     <script src="StreamVisualizer.js"></script>
+    <script src="EventHandling.js"></script>
 </body>
 </html>
