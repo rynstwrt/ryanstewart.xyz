@@ -9,8 +9,7 @@ const wave = new Wave();
 // handle overlay click
 overlay.addEventListener("click", () =>
 {
-    audioElem.volume = .25;
-    audioElem.play();
+    cycleSong(true);
     wave.fromElement(audioElem.id, canvas.id, { type: "web", colors: ["#C7EF00"] });
     overlay.style.display = "none";
 });

@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac59062-c9b5-4a06-8b4f-f756856d771e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audio/Coding.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/DVS1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ElementVisualizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/ElementVisualizer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoadTrackData.js" beforeDir="false" afterPath="$PROJECT_DIR$/AudioDataHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebRTC-Audio-Visualizer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,6 +57,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ryans\Documents\GitHub\ryanstewart.xyz\images" />
+      <recent name="C:\Users\ryans\Documents\GitHub\ryanstewart.xyz\audio" />
       <recent name="C:\Users\ryans\Documents\GitHub\ryanstewart.xyz" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -78,6 +80,7 @@
       <workItem from="1615325573742" duration="464000" />
       <workItem from="1615390008263" duration="9628000" />
       <workItem from="1615401623788" duration="3125000" />
+      <workItem from="1615479708210" duration="3976000" />
     </task>
     <servers />
   </component>
