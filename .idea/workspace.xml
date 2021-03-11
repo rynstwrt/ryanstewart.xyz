@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac59062-c9b5-4a06-8b4f-f756856d771e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/audio/Coding.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DVS1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SwipeListener.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AsciiArtConsole.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioDataHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/AudioDataHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ElementVisualizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/ElementVisualizer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoadTrackData.js" beforeDir="false" afterPath="$PROJECT_DIR$/AudioDataHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii art/apx.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii art/normandveilleux.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascii art/unknownartist1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +84,7 @@
       <workItem from="1615390008263" duration="9628000" />
       <workItem from="1615401623788" duration="3125000" />
       <workItem from="1615479708210" duration="3976000" />
+      <workItem from="1615494115351" duration="6446000" />
     </task>
     <servers />
   </component>

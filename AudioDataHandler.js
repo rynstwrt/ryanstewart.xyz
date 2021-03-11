@@ -61,8 +61,28 @@ document.addEventListener("keydown", event =>
 });
 
 
+// handle swipes
+document.addEventListener("swipe", event =>
+{
+    const dir = event.direction;
+    event.preventDefault();
+
+    if (dir === "left")
+    {
+        cycleSong(true);
+        return;
+    }
+
+    if (dir === "right")
+    {
+        cycleSong(false);
+        return;
+    }
+});
+
+
 // handle audio ending
-audioElement.onended = () =>
+audioElement.addEventListener("ended", () =>
 {
     cycleSong(true);
-}
+});
