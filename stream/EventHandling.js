@@ -112,52 +112,42 @@ document.addEventListener("keydown", event =>
 });
 
 
-// handle touch events to detect swipes
-let touchStartX;
-let touchEndX;
-const minDist = 200;
-let readyToHandleTouchEvents = false;
-function handleTouchEvent()
+
+// handle swipes
+const sl = new SwipeListener(document);
+document.addEventListener("swipe", event =>
 {
-    if (!readyToHandleTouchEvents) return;
+    const dir = event.direction;
 
-    const dist = Math.abs(touchEndX - touchStartX);
-
-    if (dist === 0)
-    {
-        // tap: hide or show footer
-        toggleFooter();
-        return;
-    }
-
-    // return if swipe not big swipe (to prevent false detection)
-    if (dist < minDist) return;
-
-    // left swipe
-    if (touchStartX > touchEndX)
+    if (dir === "left")
     {
         cycleVisualizer(true);
         return;
     }
 
-    // right swipe
-    if (touchStartX < touchEndX)
+    if (dir === "right")
     {
         cycleVisualizer(false);
         return;
     }
-}
 
-document.addEventListener("touchstart", event =>
-{
-    touchStartX = event.changedTouches[0].screenX;
+    if (dir === "up")
+    {
+        cycleColors(true);
+        return;
+    }
+
+    if (dir === "down")
+    {
+        cycleColors(false);
+        return;
+    }
 });
 
-document.addEventListener("touchend", event =>
+
+
+// handle page tap
+document.addEventListener("tap", () =>
 {
-    touchEndX = event.changedTouches[0].screenX;
-    handleTouchEvent();
+    toggleFooter();
 });
-
-
-

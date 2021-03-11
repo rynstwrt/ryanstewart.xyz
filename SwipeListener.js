@@ -1,7 +1,7 @@
 // used to create events so it has the direction property
 function createEvent(direction)
 {
-    const event = new CustomEvent("swipe");
+    const event = new Event("swipe");
     event.direction = direction;
     return event;
 }
@@ -12,6 +12,13 @@ function createEvent(direction)
 // if so, detect which direction.
 function detectSwipesWithTouchEnd(element, minSwipeDistance, xStart, xEnd, yStart, yEnd)
 {
+    // tap
+    if (xStart === xEnd && yStart === yEnd)
+    {
+        element.dispatchEvent(new Event("tap"));
+        return;
+    }
+
     // left swipe
     if (xStart > xEnd && Math.abs(xStart - xEnd) >= minSwipeDistance)
     {

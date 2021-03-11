@@ -22,7 +22,7 @@ function onMicAccess(micStream)
     overlay.style.opacity = "0";
 
     // if using touch device, update the controls in the footer
-    if (isTouchDevice())
+    if (sl.isTouchDevice())
     {
         document.getElementById("code-left").textContent = "Swipe left";
         document.getElementById("code-right").textContent = "Swipe right";
@@ -33,7 +33,7 @@ function onMicAccess(micStream)
         // let EventHandling.js know when can listen for swipe/tap events.
         setTimeout(() =>
         {
-            readyToHandleTouchEvents = true;
+            sl.startListening();
             overlay.style.display = "none";
         }, canvasTransitionSeconds * 1000);
     }
@@ -87,16 +87,6 @@ function cycleVisualizer(isIncreasing)
             isTransitioning = false;
         }, canvasTransitionSeconds * 1000);
     }, canvasTransitionSeconds * 1000);
-}
-
-
-// check if the device is a touch device
-function isTouchDevice()
-{
-    const hasEvent = "ontouchstart" in window;
-    const hasTouchPoints = navigator.maxTouchPoints > 0;
-    const msHasTouchPoints = navigator.msMaxTouchPoints > 0;
-    return hasEvent || hasTouchPoints || msHasTouchPoints;
 }
 
 
